@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 function Counter() {
 
-  const selectCounter = state => state.value;
+  const selectCounter = state => state.counterReducer.value;
   const dispatch = useDispatch();
   const counter = useSelector(selectCounter)
 

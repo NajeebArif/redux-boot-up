@@ -1,4 +1,3 @@
-import { legacy_createStore as createStore } from 'redux'
 
 export function counterReducer(state = { value: 0 }, action) {
     switch (action.type) {

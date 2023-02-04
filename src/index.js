@@ -4,13 +4,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { counterReducer } from './reducers/counterReducer';
-import { legacy_createStore as createStore } from 'redux'
+import configureStore from './reducers/configureStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const store = createStore(counterReducer);
-store.subscribe(() => console.log('Value', store.getState().value))
+const store = configureStore();
 
 root.render(
   <React.StrictMode>
