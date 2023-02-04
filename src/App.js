@@ -5,12 +5,11 @@ import AnotherCounter from './components/AnotherCounter';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className='container'>
+      <div className="d-flex flex-column gap-2 justify-content-center m-3">
         <Counter />
-        <hr />
         <AnotherCounter />
-      </header>
+      </div>
     </div>
   );
 }
