@@ -1,18 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import Counter from './components/Counter';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Thid is a header section
+        <Counter />
       </header>
-      <section>
-        This is another section
-      </section>
-      <section>
-        This is another section.
-      </section>
     </div>
   );
 }
