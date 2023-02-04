@@ -15,3 +15,10 @@ export const toggleTodo = (id) =>{
         id
     }
 }
+
+export const setVisibilityFilter = (filter) =>{
+    return {
+        type: 'filters/SET_FILTERS',
+        filter
+    }
+}

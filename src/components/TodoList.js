@@ -39,8 +39,21 @@ const Todo = ({ id, desc, isComplete, toggleTodo }) => {
   );
 }
 
+const getVisibleTodos = (todos, filter) => {
+  switch (filter) {
+    case 'SHOW_ALL':
+      return todos;
+    case 'SHOW_COMPLETED':
+      return todos.filter(t => t.isComplete);
+    case 'SHOW_ACTIVE':
+      return todos.filter(t => !t.isComplete);
+    default:
+      throw new Error(`Unknown filter: ${filter}.`);
+  }
+};
+
 const mapStateToProps = (state) => ({
-  todos: state.todoReducer
+  todos: getVisibleTodos(state.todoReducer, state.filters)
 })
 
 const mapDispatchToProps = (dispatch) => ({
