@@ -1,37 +1,27 @@
 import React from 'react'
-import {legacy_createStore as createStore} from 'redux'
-
-function counterReducer(state={value:0}, action){
-  switch(action.type){
-    case 'INCREMENT':
-      return {value: state.value+1}
-    case 'DECREMENT':
-      return {value: state.value-1}
-    default:
-      return state;
-  }
-}
+import { useSelector, useDispatch } from 'react-redux'
 
 function Counter() {
 
-  const store = createStore(counterReducer);
+  const selectCounter = state => state.value;
+  const dispatch = useDispatch();
+  const counter = useSelector(selectCounter)
 
-  const increment = ()=>{
-    store.dispatch({type: 'INCREMENT'})
+  const increment = () => {
+    dispatch({ type: 'INCREMENT' })
   }
 
-  const decrement = ()=>{
-    store.dispatch({type: 'DECREMENT'})
+  const decrement = () => {
+    dispatch({ type: 'DECREMENT' })
   }
 
-  store.subscribe(()=> console.log('Value',store.getState().value))
-
-    return (
-      <div>
-        <button onClick={increment}>Increment</button>
-        <button onClick={decrement}>Decrement</button>
-      </div>
-    )
-  }
+  return (
+    <div>
+      Counter: {counter}
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  )
+}
 
 export default Counter;
