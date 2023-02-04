@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 
 const mapStateToProps = state =>({
-    counter: state.value
+    counter: state.counterReducer.value
 })
 
 const mapDispatchToProps = dispatch =>({
