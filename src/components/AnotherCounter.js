@@ -12,10 +12,10 @@ const mapDispatchToProps = dispatch =>({
 
 function AnotherCounter({counter, increment, decrement}) {
     return (
-        <div>
-          Another Counter: {counter}
-          <button onClick={increment}>Increment</button>
-          <button onClick={decrement}>Decrement</button>
+        <div className='d-flex gap-2'>
+          <span>Another Counter: {counter}</span>
+          <button className='btn btn-primary' onClick={increment}>Increment</button>
+          <button className='btn btn-danger' onClick={decrement}>Decrement</button>
         </div>
       )
 }
